@@ -9,7 +9,7 @@ When you want to create a new script use ScriptTemplate.cs in scripts folder the
 
 ## Features
 
-```
+``` ruby
 Component-based Scripting
 Home-Made Scripts
 Debug UI
