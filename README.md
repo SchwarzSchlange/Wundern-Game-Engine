@@ -7,6 +7,8 @@ There are home-made scripts by me like (Rigidbody,Movement,Collision,PlayerPosit
 
 When you want to create a new script use ScriptTemplate.cs in scripts folder then copy the content of it
 
+
+From Gif It seems slow but because of the video :)
 ![](https://github.com/SchwarzSchlange/Wundern-Game-Engine/blob/master/overvie.gif)
 
 ## Features
