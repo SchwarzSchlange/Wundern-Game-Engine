@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Debug.cs" />
     <Compile Include="Keyboard.cs" />
+    <Compile Include="LevelLoader.cs" />
     <Compile Include="Scripts\Collision.cs" />
     <Compile Include="Scripts\PlayerPositionText.cs" />
     <Compile Include="Scripts\Rigidbody.cs" />

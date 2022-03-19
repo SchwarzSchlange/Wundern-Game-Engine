@@ -12,7 +12,7 @@ namespace Wundern
 
 
         public static Thread RenderThread;
-        public static int RenderDelay = 10;
+        public static int RenderDelay = 50;
 
         public static void UpdateAll()
         {

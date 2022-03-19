@@ -24,30 +24,33 @@ namespace Wundern
         {
             Collision collision = Attached.GetComponent<Collision>();
 
-
+            WunderObject colliding = null;
             if(Keyboard.IsPressed(Keys.A))
             {
 
-                if(collision.CheckVirtualPosition(Attached.position - new Vector2(1,0)) == null)
+                if(!collision.CheckVirtualPosition(Attached.position - new Vector2(1,0),ref colliding))
                 {
                     Attached.position = new Vector2(Attached.position.x - 1, Attached.position.y);
                     
                 }
                 else
                 {
-                    var colliding = collision.CheckVirtualPosition(Attached.position - new Vector2(1, 0));
-
+                    
                     try
                     {
-                        if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                        if(colliding != null)
                         {
-                            Attached.position = new Vector2(Attached.position.x - 1, Attached.position.y);
-                            colliding.position += new Vector2(-1, 0);
+                            if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                            {
+                                Attached.position = new Vector2(Attached.position.x - 1, Attached.position.y);
+                                colliding.position += new Vector2(-1, 0);
+                            }
                         }
+                      
                     }
                     catch
                     {
-                        Debug.Add($"{colliding.name} has not Rigidbody Component");
+                    
                     }
            
                     
@@ -59,25 +62,29 @@ namespace Wundern
             }
             else if(Keyboard.IsPressed(Keys.D))
             {
-                if (collision.CheckVirtualPosition(Attached.position + new Vector2(1, 0)) == null)
+                if (!collision.CheckVirtualPosition(Attached.position + new Vector2(1, 0), ref colliding))
                 {
                     Attached.position = new Vector2(Attached.position.x + 1, Attached.position.y);
                 }
                 else
                 {
-                    var colliding = collision.CheckVirtualPosition(Attached.position + new Vector2(1, 0));
+                   
 
                     try
                     {
-                        if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                        if (colliding != null)
                         {
-                            Attached.position = new Vector2(Attached.position.x + 1, Attached.position.y);
-                            colliding.position += new Vector2(1, 0);
+                            if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                            {
+                                Attached.position = new Vector2(Attached.position.x + 1, Attached.position.y);
+                                colliding.position += new Vector2(1, 0);
+                            }
                         }
+                     
                     }
                     catch
                     {
-                        // Object is not move-able
+                     
                     }
 
 
@@ -88,25 +95,29 @@ namespace Wundern
             }
             else if (Keyboard.IsPressed(Keys.W))
             {
-                if (collision.CheckVirtualPosition(Attached.position - new Vector2(0, 1)) == null)
+                if (!collision.CheckVirtualPosition(Attached.position - new Vector2(0, 1), ref colliding))
                 {
                     Attached.position = new Vector2(Attached.position.x, Attached.position.y - 1);
                 }
                 else
                 {
-                    var colliding = collision.CheckVirtualPosition(Attached.position - new Vector2(0, 1));
+                   
 
                     try
                     {
-                        if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                        if (colliding != null)
                         {
-                            Attached.position = new Vector2(Attached.position.x, Attached.position.y - 1);
-                            colliding.position += new Vector2(0, -1);
+                            if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                            {
+                                Attached.position = new Vector2(Attached.position.x, Attached.position.y - 1);
+                                colliding.position += new Vector2(0, -1);
+                            }
                         }
+                      
                     }
                     catch
                     {
-                        Debug.Add($"{colliding.name} has not Rigidbody Component");
+                   
                     }
 
 
@@ -116,25 +127,29 @@ namespace Wundern
             }
             else if (Keyboard.IsPressed(Keys.S))
             {
-                if (collision.CheckVirtualPosition(Attached.position + new Vector2(0, 1)) == null)
+                if (!collision.CheckVirtualPosition(Attached.position + new Vector2(0, 1), ref colliding))
                 {
                     Attached.position = new Vector2(Attached.position.x, Attached.position.y + 1);
                 }
                 else
                 {
-                    var colliding = collision.CheckVirtualPosition(Attached.position + new Vector2(0, 1));
-
+                    
+                   
                     try
                     {
-                        if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                        if (colliding != null)
                         {
-                            Attached.position = new Vector2(Attached.position.x, Attached.position.y + 1);
-                            colliding.position += new Vector2(0, 1);
+                            if (colliding.GetComponent<Rigidbody>().mass < Attached.GetComponent<Rigidbody>().mass)
+                            {
+                                Attached.position = new Vector2(Attached.position.x, Attached.position.y + 1);
+                                colliding.position += new Vector2(0, 1);
+                            }
                         }
+                     
                     }
                     catch
                     {
-                        Debug.Add($"{colliding.name} has not Rigidbody Component");
+                   
                     }
 
 

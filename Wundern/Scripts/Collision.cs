@@ -24,21 +24,36 @@ namespace Wundern
             var y = WunderObject.sceneObjects.FindAll(x => Vector2.IsEqual(x.position,Attached.position) && x.id != Attached.id);
             Debug.SetStatus($"Player In Object : {y.Count}");
             TotalColliding = y.Count;
+
+
+            
         }
 
 
-        public WunderObject CheckVirtualPosition(Vector2 virtual_pos)
+        public bool CheckVirtualPosition(Vector2 virtual_pos,ref WunderObject CollidingWith)
         {
             var y = WunderObject.sceneObjects.FindAll(x => Vector2.IsEqual(x.position, virtual_pos) && x.id != Attached.id);
             
             if(y.Count >= 1 && y[0].isCollide)
             {
-             
-                return y[0];
+                CollidingWith = y[0];
+                return true;
             }
             else
             {
-                return null;
+                if(LevelLoader.cls.FindAll(position => Vector2.IsEqual(position,virtual_pos)).Count >= 1)
+                {
+                
+                    CollidingWith = null;
+                    return true;
+                }
+                else
+                {
+                    
+                    CollidingWith = null;
+                    return false;
+                }
+
             }
 
         }

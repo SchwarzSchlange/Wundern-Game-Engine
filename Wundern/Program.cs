@@ -26,7 +26,11 @@ namespace Wundern
         {
             
             WandernEngine.InitConsole();
+
             Debug.Start(); // Debug Panel Open
+
+            LevelLoader.Load("level0.wl"); // Load Level To Scene
+
 
             ObjectInit();
             WandernEngine.RunScripts(); // Call every Start of scripts
@@ -46,16 +50,7 @@ namespace Wundern
             player1.AddComponent(new Rigidbody());
             player1.AddComponent(new Movement());
             player1.GetComponent<Rigidbody>().mass = 10;
-           
-            WunderObject Wall1 = new WunderObject("Wall1", "#",true, new Vector2(4, 4));
-            Wall1.AddComponent(new Rigidbody());
-            Wall1.GetComponent<Rigidbody>().mass = 1;
-    
 
-            Text player_pos_text = new Text("tplayer", "", false,new Vector2(52, 0));
-            player_pos_text.AddComponent(new PlayerPositionText());
-
-        
         }
     }
 }
