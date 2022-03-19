@@ -11,7 +11,7 @@ When you want to create a new script use ScriptTemplate.cs in scripts folder the
 
 ``` ruby
 Component-based Scripting
-Home-Made Scripts
+Home-Made Scripts (Rigidbody,Movement,Collision,PlayerPositionText)
 Debug UI
 Fast Render
 ```
