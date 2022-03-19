@@ -7,8 +7,11 @@ There are home-made scripts by me like (Rigidbody,Movement,Collision,PlayerPosit
 
 When you want to create a new script use ScriptTemplate.cs in scripts folder then copy the content of it
 
-# Features
+## Features
+
+```
 Component-based Scripting
 Home-Made Scripts
 Debug UI
 Fast Render
+```
