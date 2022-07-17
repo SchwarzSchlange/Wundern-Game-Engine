@@ -1,5 +1,5 @@
 # Wundern-Game-Engine
-Optimized | Console-Based | Compact Game Engine
+Console-Based Game Engine
 
 
 All script you want to add should be in scripts folder
@@ -15,7 +15,7 @@ From Gif It seems slow but because of the video :)
 
 ``` ruby
 Component-based Scripting
-Home-Made Scripts (Rigidbody,Movement,Collision,PlayerPositionText)
+Added Scripts (Rigidbody,Movement,Collision,PlayerPositionText)
 Debug UI
 Fast Render
 ```
